@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+<p>{{ message }}</p>
+
+{% if answers %}
+
+{% for answer in answers %}
+
+<blockquote class="bg-secondary text-light p-3 rounded">
+{{ answer.message }}
+</blockquote>
+
+{% endfor %}
+
+{% endif %}
+
+
+<p><a href="{{ url_for('get_answer', id=id) }}" class="btn btn-primary">Add an answer</a></p>
+
+{% endblock content %}

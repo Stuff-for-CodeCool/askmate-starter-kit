@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} AskMate {% endblock title %}
+
+{% block content %}
+
+<ol>
+    {% for question in questions %}
+    <li>
+        <a href="{{ url_for('get_question', id=question.id) }}"
+            >{{ question.title }}</a
+        >
+    </li>
+    {% endfor %}
+</ol>
+
+{% endblock content %}
